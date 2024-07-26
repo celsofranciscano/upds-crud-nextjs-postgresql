@@ -14,6 +14,35 @@ pnpm dev
 bun dev
 ```
 
+
+## LIBRERIAS INSTALADAS
+```bash
+npm i axios
+
+# INSTALACIONDE PRISMA
+
+npm install prisma --save-dev
+npx prisma
+npx prisma init
+
+# MIGRACION DE LA BASE DE DATOS EN PRISMA
+
+npx prisma migrate dev --name init
+
+# VALIDACION DE FORMULARIOS
+
+npm install react-hook-form
+
+#INSTALAR  NEXT AUTH PARA AUTENTICACION
+
+npm install next-auth
+
+# INSTALAR PARA ENCRIPTAR PASSWORD
+
+ npm install bcrypt
+```
+
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
