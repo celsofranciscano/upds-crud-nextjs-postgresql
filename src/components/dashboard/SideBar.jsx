@@ -2,7 +2,7 @@
 // components/SideBar.js
 import Link from "next/link";
 import { signOut } from "next-auth/react";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -24,20 +24,7 @@ function SideBar() {
     document.getElementById("card-perfil")?.classList.toggle("hidden");
   }
 
-  useEffect(() => {
-    document.documentElement.classList.toggle(
-      "dark",
-      localStorage.getItem("theme") === "dark"
-    );
-  }, []);
 
-  function toggleTheme() {
-    localStorage.setItem(
-      "theme",
-      localStorage.getItem("theme") === "light" ? "dark" : "light"
-    );
-    document.documentElement.classList.toggle("dark");
-  }
 
   return (
     <>
@@ -45,7 +32,7 @@ function SideBar() {
         <a className="flex gap-1 items-center" href="/dashboard">
           {/* <img className="w-8" src="/logo.png" alt="logo sneakers" /> */}
           <span className="text-2xl font-extrabold dark:text-white text-black">
-            UPDS
+            UPDS GAME
           </span>
         </a>
 
@@ -117,17 +104,17 @@ function SideBar() {
             </li>
 
             <NavLink
-              path="/dashboard/clientes"
+              path="/dashboard/usuarios"
               currentPath={pathname}
               onClick={handlebtnclick}
-              name={"Clientes"}
+              name={"Jugadores"}
             />
 
             <NavLink
-              path="/dashboard/roles"
+              path="/dashboard/partidas"
               currentPath={pathname}
               onClick={handlebtnclick}
-              name={"Roles"}
+              name={"Partidas"}
             />
           </ul>
         </nav>
@@ -181,30 +168,7 @@ function SideBar() {
           </div>
         </div>
         <ul onClick={btnclickperfil} className="grid gap-2">
-          <li onClick={btnclickperfil}>
-            <Link
-              href="/dashboard/profile"
-              onClick={btnclickperfil}
-              className="flex items-center"
-            >
-              <svg
-                className="w-5 h-5 text-gray-800 dark:text-zinc-400"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                />
-              </svg>
-              <span>Tu perfil</span>
-            </Link>
-          </li>
+      
 
           <li onClick={() => signOut()} className="cursor-pointer">
             <button className="text-red-500 flex items-center">

@@ -1,8 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
   provider = "prisma-client-js"
@@ -19,19 +14,43 @@ model tbroles {
   status    Boolean   @default(true)
   createdAt DateTime  @default(now())
   updatedAt DateTime?
-  tbusers   tbusers[]
+  tbusers   tbusers[] // Relación uno a muchos con tbusers
 }
 
 model tbusers {
-  PK_user      Int           @id @default(autoincrement())
-  FK_role      Int           @default(67483231)
-  firstName    String        @db.VarChar(80)
-  lastName     String        @db.VarChar(80)
-  email        String        @unique @db.VarChar(255)
-  password     String        @db.VarChar(255)
-  profileImage String?       @db.VarChar(255)
-  status       Boolean       @default(true)
-  createdAt    DateTime      @default(now())
+  PK_user      Int        @id @default(autoincrement())
+  FK_role      Int        @default(67483231)
+  firstName    String     @db.VarChar(80)
+  lastName     String     @db.VarChar(80)
+  email        String     @unique @db.VarChar(255)
+  password     String     @db.VarChar(255)
+  profileImage String?    @db.VarChar(255)
+  status       Boolean    @default(true)
+  createdAt    DateTime   @default(now())
   updatedAt    DateTime?
-  tbroles      tbroles       @relation(fields: [FK_role], references: [PK_role])
+  tbroles      tbroles    @relation(fields: [FK_role], references: [PK_role])
+  tbgames      tbgames[]  // Relación uno a muchos con tbgames
+}
+
+model tbgames {
+  PK_game      Int        @id @default(autoincrement())
+  FK_user      Int
+  totalScore   Int
+  level        Int
+  status       Boolean    @default(true)
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime?
+  tbusers      tbusers    @relation(fields: [FK_user], references: [PK_user])
+  tbscores     tbscores[] // Relación uno a muchos con tbscores
+}
+
+model tbscores {
+  PK_score     Int        @id @default(autoincrement())
+  FK_game      Int
+  partialScore Int
+  typeScore    String     @db.VarChar(50)
+  status       Boolean    @default(true)
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime?
+  tbgames      tbgames    @relation(fields: [FK_game], references: [PK_game])
 }

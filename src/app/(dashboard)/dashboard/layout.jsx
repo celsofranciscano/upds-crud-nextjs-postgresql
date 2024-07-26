@@ -14,9 +14,9 @@ export default function RootLayout({ children }) {
   return (
     <DashboardProvider>
       <html lang="en">
-        <body className={inter.className}>
+      <body className="bg-zinc-100 dark:bg-zinc-950 text-zinc-400 ">
           <SideBar />
-          {children}
+          <main className=" pt-20 px-4  md:pr-8 md:pl-64  ">{children}</main>
         </body>
       </html>
     </DashboardProvider>
