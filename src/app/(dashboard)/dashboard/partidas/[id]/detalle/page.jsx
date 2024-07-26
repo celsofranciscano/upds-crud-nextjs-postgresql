@@ -33,7 +33,7 @@ async function DetailGamePage({ params }) {
           </h1>
           <p> Nivel {game.level}</p>
           <p> FK DE USUARIO: {game.FK_user}</p>
-          <p> FK DE PARTIDA: {game.PK_game}</p>
+          <p> PK DE PARTIDA: {game.PK_game}</p>
           {game.status && (
             <span className="bg-blue-500 text-white text-sm px-2 rounded-md">
               Activo
@@ -44,14 +44,14 @@ async function DetailGamePage({ params }) {
 
       <section className=" grid gap-4">
         <div className=" flex items-center justify-between ">
-          <h1 className="text-2xl font-medium text-white">Partidas</h1>
+          <h1 className="text-2xl font-medium text-white">PUNTUACION</h1>
           <LinkButton href={"detalle/nuevo"} name={"Nueva puntuacion"} />
         </div>
         <Table
           columns={columns}
           rows={rows}
           url={`scores/${params.id}`}
-          pathname={"puntuacion"}
+          pathname={"detalle"}
         />
       </section>
     </section>

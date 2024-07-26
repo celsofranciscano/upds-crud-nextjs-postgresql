@@ -6,7 +6,7 @@ export async function GET(request, { params }) {
   
    const score = await prisma.tbscores.findMany({
       where: {
-        PK_score: Number(params.id),
+        FK_game: Number(params.id),
       },
     });
     return NextResponse.json(score);

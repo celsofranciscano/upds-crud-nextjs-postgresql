@@ -7,10 +7,8 @@ VALUES
   (65465435, 'Administrador');
 
 
-INSERT INTO tbusers (firstName, lastName, email, password, FK_role, profileImage, status, createdAt, updatedAt)
+INSERT INTO tbusers ("firstName", "lastName", "email", "password", "FK_role", "profileImage", "status", "createdAt", "updatedAt")
 VALUES 
-  ('Alan', 'Brito Delgado', 'alan.brito.delgado@gmail.com', 'password123', 67483231, NULL, true, CURRENT_TIMESTAMP, NULL),
-  ('Alan', 'Brito Grueso', 'alan.brito.grueso@gmail.com', 'password123', 67483231, NULL, true, CURRENT_TIMESTAMP, NULL),
   ('Zoyla', 'Vaca Lola', 'zoyla.vaca.lola@gmail.com', 'password123', 67483231, NULL, true, CURRENT_TIMESTAMP, NULL),
   ('Elsa', 'Capunta Fina', 'elsa.capunta.fina@gmail.com', 'password123', 67483231, NULL, true, CURRENT_TIMESTAMP, NULL),
   ('Susana', 'Oria Naranja', 'susana.oria.naranja@gmail.com', 'password123', 67483231, NULL, true, CURRENT_TIMESTAMP, NULL),
