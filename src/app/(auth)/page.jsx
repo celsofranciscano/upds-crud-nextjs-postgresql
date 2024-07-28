@@ -87,8 +87,7 @@ function LoginPage() {
 
       <div className="text-blue-400 text-sm flex py-4 gap-4">
         <Link href={"register"}>Crear Cuenta</Link>
-        <span className="text-black"> ó</span>
-        <Link href={"#"}>Recuperar contraseña</Link>
+
       </div>
     </div>
   );

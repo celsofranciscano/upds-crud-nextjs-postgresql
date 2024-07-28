@@ -18,7 +18,7 @@ function NewClientPage() {
 
     if (response.status === 200) {
       router.refresh();
-      router.back();
+      router.push("/dashboard/usuarios")
     }
   }
   return (

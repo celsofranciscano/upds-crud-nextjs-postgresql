@@ -25,12 +25,12 @@ function RegisterPage() {
   return (
     <div className=" flex flex-col   items-center   justify-center ">
       <a href="/" className="flex items-center gap-4">
-        <img
+        {/* <img
           className="w-10"
           src="/logo.png"
           alt="logo sneakers"
-        />
-        <h1 className="font-bold">Sneakers</h1>
+        /> */}
+        <h1 className="font-bold">UPDS</h1>
       </a>
       <h1 className="text-2xl font-bold my-2">Crear cuenta</h1>
 
@@ -151,7 +151,7 @@ function RegisterPage() {
       </form>
 
       <div className="text-blue-400 text-sm flex py-4 gap-4">
-        <Link href={"login"}>Iniciar sesion</Link>
+        <Link href={"/"}>Iniciar sesion</Link>
       </div>
     </div>
   );

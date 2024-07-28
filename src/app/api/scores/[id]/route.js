@@ -25,12 +25,14 @@ export async function GET(request, { params }) {
 export async function PATCH(request, { params }) {
   try {
     const { partialScore, typeScore } = await request.json();
+    console.log(partialScore,typeScore)
+    console.log(params.id);
     const editScore = await prisma.tbscores.update({
       where: {
         PK_score: Number(params.id),
       },
       data: {
-        partialScore,
+        partialScore:Number(partialScore),
         typeScore
       },
     });

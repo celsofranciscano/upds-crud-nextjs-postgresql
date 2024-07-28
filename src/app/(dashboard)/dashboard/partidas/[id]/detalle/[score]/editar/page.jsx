@@ -7,9 +7,10 @@ import ButtonSubmit from "@/components/common/ButtonSubmit";
 
 function EditScorePage({ params }) {
   const [game, setGame] = useState();
+  console.log(params)
   useEffect(() => {
     async function getuser() {
-      const response = await axios.get(`/api/scores/score/${params.score}`);
+      const response = await axios.get(`/api/scores/${params.score}/score`);
       setGame(response.data);
     }
     getuser();
@@ -23,8 +24,7 @@ function EditScorePage({ params }) {
 
   async function onSubmit(data) {
     const response = await axios.patch(`/api/scores/${params.score}`, data);
-    console.log(data);
-    console.log(response);
+   
 
     if (response.status === 200) {
       router.refresh();
@@ -44,7 +44,6 @@ function EditScorePage({ params }) {
           Puntaje parcial
           <input
             type="number"
-            autoFocus
             defaultValue={game?.partialScore}
             className="input-dark"
             {...register("partialScore", {

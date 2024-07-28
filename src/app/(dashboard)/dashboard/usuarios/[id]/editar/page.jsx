@@ -27,7 +27,7 @@ function EditClientPage({ params }) {
 
     if (response.status === 200) {
       router.refresh();
-      router.back();
+      router.push("/dashboard/usuarios")
     }
   }
   return (
@@ -44,7 +44,7 @@ function EditClientPage({ params }) {
           <input
             type="text"
             defaultValue={user?.firstName}
-            autoFocus
+
             className="input-dark"
             {...register("firstName", {
               required: {

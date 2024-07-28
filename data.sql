@@ -12,7 +12,7 @@ VALUES
   ('Zoyla', 'Vaca Lola', 'zoyla.vaca.lola@gmail.com', 'password123', 67483231, NULL, true, CURRENT_TIMESTAMP, NULL),
   ('Elsa', 'Capunta Fina', 'elsa.capunta.fina@gmail.com', 'password123', 67483231, NULL, true, CURRENT_TIMESTAMP, NULL),
   ('Susana', 'Oria Naranja', 'susana.oria.naranja@gmail.com', 'password123', 67483231, NULL, true, CURRENT_TIMESTAMP, NULL),
-  ('Aitor', 'Menta Fuerte', 'aitor.menta.fuerte@gmail.com', 'password123', 67483231, NULL, true, CURRENT_TIMESTAMP, NULL),
+  ('Aitor', 'Menta FDDuerte', 'aitor.menta.fuerte@gmail.com', 'password123', 67483231, NULL, true, CURRENT_TIMESTAMP, NULL),
   ('Aquiles', 'Pinto Paredes', 'aquiles.pinto.paredes@gmail.com', 'password123', 67483231, NULL, true, CURRENT_TIMESTAMP, NULL),
   ('Zoyla', 'Becerra Vaca', 'zoyla.becerra.vaca@gmail.com', 'password123', 67483231, NULL, true, CURRENT_TIMESTAMP, NULL),
   ('Cindy', 'Entes Blanco', 'cindy.entes.blanco@gmail.com', 'password123', 67483231, NULL, true, CURRENT_TIMESTAMP, NULL);

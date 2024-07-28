@@ -3,8 +3,6 @@ import Table from "@/components/common/Table";
 import LinkButton from "@/components/common/LinkButton";
 
 async function DetailGamePage({ params }) {
-
-    
   let game;
   try {
     const response = await axios.get(
@@ -12,6 +10,15 @@ async function DetailGamePage({ params }) {
     );
 
     game = response.data;
+  } catch (error) {}
+
+  let user;
+
+  try {
+    const response = await axios.get(
+      `${process.env.URL_API}/api/users/${game?.FK_user}`
+    );
+    user = response.data;
   } catch (error) {}
 
   const columns = [
@@ -28,23 +35,24 @@ async function DetailGamePage({ params }) {
     <section className="rounded-md bg-white dark:bg-zinc-900  p-4 ">
       <div className="flex gap-4">
         <div className="">
-          <h1 className="font-medium text-2xl text-black dark:text-white">
-            Total puntos: {game.totalScore}
-          </h1>
-          <p> Nivel {game.level}</p>
-          <p> FK DE USUARIO: {game.FK_user}</p>
-          <p> PK DE PARTIDA: {game.PK_game}</p>
-          {game.status && (
-            <span className="bg-blue-500 text-white text-sm px-2 rounded-md">
-              Activo
-            </span>
-          )}
+          <p className="font-medium text-2xl  ">Jugador:</p>
+          <p className="font-medium text-2xl text-black dark:text-white">
+            {user?.firstName} {user?.lastName}
+          </p>
+          <p className="font-medium text-2xl  ">Partida:</p>
+          <div className="flex justify-center gap-8  items-center font-medium text-2xl text-black dark:text-white">
+            <p>ID Partida: {game.PK_game}</p>
+            <p>Total Puntos: {game.totalScore}</p>
+            <p>Nivel: {game.level}</p>
+          </div>
+
         </div>
       </div>
 
       <section className=" grid gap-4">
         <div className=" flex items-center justify-between ">
-          <h1 className="text-2xl font-medium text-white">PUNTUACION</h1>
+          <h1 className="text-2xl font-medium ">Puntuaciones: </h1>
+          <p>* No aparece la puntuacion? recarga la pagina</p>
           <LinkButton href={"detalle/nuevo"} name={"Nueva puntuacion"} />
         </div>
         <Table

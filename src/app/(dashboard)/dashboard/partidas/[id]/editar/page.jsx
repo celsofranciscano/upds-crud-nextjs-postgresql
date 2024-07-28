@@ -28,10 +28,10 @@ function EditAdministratorPage({ params }) {
 
     if (response.status === 200) {
       router.refresh();
-      router.back();
+      router.push("/dashboard/partidas")
     }
 
-    console.log(data);
+
   }
 
   return (
@@ -46,7 +46,6 @@ function EditAdministratorPage({ params }) {
           Total puntos
           <input
             type="number"
-            autoFocus
             defaultValue={game?.totalScore}
             className="input-dark"
             {...register("totalScore", {
